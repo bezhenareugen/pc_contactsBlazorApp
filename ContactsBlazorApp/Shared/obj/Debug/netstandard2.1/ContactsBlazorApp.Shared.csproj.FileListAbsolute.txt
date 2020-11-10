@@ -1,0 +1,9 @@
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\bin\Debug\netstandard2.1\ContactsBlazorApp.Shared.deps.json
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\bin\Debug\netstandard2.1\ContactsBlazorApp.Shared.dll
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\bin\Debug\netstandard2.1\ContactsBlazorApp.Shared.pdb
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\obj\Debug\netstandard2.1\ContactsBlazorApp.Shared.csprojAssemblyReference.cache
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\obj\Debug\netstandard2.1\ContactsBlazorApp.Shared.AssemblyInfoInputs.cache
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\obj\Debug\netstandard2.1\ContactsBlazorApp.Shared.AssemblyInfo.cs
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\obj\Debug\netstandard2.1\ContactsBlazorApp.Shared.csproj.CoreCompileInputs.cache
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\obj\Debug\netstandard2.1\ContactsBlazorApp.Shared.dll
+C:\Users\jeka\source\repos\ContactsBlazorApp\ContactsBlazorApp\Shared\obj\Debug\netstandard2.1\ContactsBlazorApp.Shared.pdb

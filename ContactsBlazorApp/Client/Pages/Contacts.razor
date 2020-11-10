@@ -1,0 +1,123 @@
+﻿@page "/contacts"
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@using ContactsBlazorApp.Shared
+@attribute [Authorize]
+@inject HttpClient Http
+   @using System.Linq
+
+    <h3>Contacts</h3>
+
+
+    @if (ContactsList == null || ContactsList.Count == 0)
+    {
+        <div>Loading...)</div>
+    }
+
+    else
+    {
+        @foreach (var contact in ContactsList)
+        {
+            <div class="contact">
+                <div>@contact.Id</div>
+                <div>@contact.ContactPhone</div>
+                <button @onclick="() => DeleteContact(contact.Id)">Delete</button>
+                <div>
+                    <div>
+                        <input type="text" @bind="editContact.ContactPhone" />
+                    </div>
+                    <button @onclick="() => UpdateContact(contact.Id)">Update</button>
+                </div>
+          
+            </div>
+        }
+    }
+
+
+
+
+
+    <div>
+        <h3>Create a new Contact</h3>
+        <div>
+            <input type=" text" @bind="ContactPhone" />
+    <button @onclick="() => CreateContact()">Create</button>
+</div>
+    </div>
+
+
+    <style>
+        .contact {
+            border: 1px solid black;
+        }
+    </style>
+
+    @code {
+        private List<Contact> ContactsList;
+        private string ContactPhone;
+
+        private Contact editContact = new Contact();
+
+
+
+
+        protected override async Task OnInitializedAsync()
+        {
+            try
+            {
+                ContactsList = await Http.GetFromJsonAsync<List<Contact>>("api/contact");
+            }
+            catch (AccessTokenNotAvailableException exception)
+            {
+
+                exception.Redirect();
+            }
+        }
+
+
+        private async Task CreateContact()
+        {
+            try
+            {
+                await Http.PostAsJsonAsync("api/contact", ContactPhone);
+            }
+            catch (AccessTokenNotAvailableException exception)
+            {
+
+                exception.Redirect();
+            }
+        }
+        private async Task UpdateContact(Guid id)
+        {
+            try
+            {
+                await Http.PutAsJsonAsync("api/contact/" + id, editContact);
+            }
+            catch (AccessTokenNotAvailableException exception)
+            {
+
+                exception.Redirect();
+            }
+
+        }
+
+        private async Task DeleteContact(Guid id)
+        {
+            try
+            {
+                await Http.DeleteAsync($"api/contact/{id}");
+            }
+            catch (AccessTokenNotAvailableException exception)
+            {
+
+                exception.Redirect();
+            }
+        }
+
+
+
+
+
+
+
+    }
